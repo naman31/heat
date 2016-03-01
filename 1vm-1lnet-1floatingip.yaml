@@ -48,7 +48,7 @@ resources:
       properties:
          name: subnet_1
          cidr: 10.10.10.0/24
-         dns_nameservers:[ { get_param: dns } ]
+         dns_nameservers: [ { get_param: dns } ]
          enable_dhcp: true
          gateway_ip: 10.10.10.1
          network_id: { get_resource: lnet_1 }
