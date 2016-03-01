@@ -59,11 +59,7 @@ resources:
       properties:
          admin_state_up: true
          name: router_1
-   router_1_gw:
-      type: OS::Neutron::RouterGateway
-      properties:
-         network_id: { get_param: external_network_id }
-         router_id: { get_resource: router_1 }
+         external_gateway_info: { "network": { get_param: external_network_id }}
    router1_int1:
       type: OS::Neutron::RouterInterface
       properties:
