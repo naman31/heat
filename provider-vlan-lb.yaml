@@ -30,11 +30,7 @@ resources:
       admin_state_up: true
       name: Provider-NN-LB-01
       value_specs: {router_type: exclusive}
-  lb_01_gw:
-    type: OS::Neutron::RouterGateway
-    properties:
-      network_id: {get_param: external_network_id}
-      router_id: { get_resource: lb_01 }
+      external_gateway_info: { "network": { get_param: external_network_id }}
   lb_int0:
     type: OS::Neutron::RouterInterface
     properties:
