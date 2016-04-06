@@ -8,7 +8,7 @@ parameters:
     type: string
     label: ext-net
     description: UUID of a Neutron external network
-    default: fdb92e61-75e4-47ef-9b74-557af5b6147d
+    default: fdb92e61-75e4-47ef-9b74-557af5b6147e
 
   provider_network_id:
     type: string
@@ -43,4 +43,3 @@ resources:
        network_id: { get_param: provider_network_id }
        fixed_ips:
           - subnet: { get_param: provider_subnet_id }
-
